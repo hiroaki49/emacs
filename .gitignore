@@ -1,0 +1,17 @@
+# シャープ付きファイル
+\#*#
+*#
+.#*
+# 一時ファイル
+.*~
+*~
+
+test/
+tmp/
+*.dat
+*~
+*.elc
+auto-save-list/
+elpa/
+server/
+eshell/
