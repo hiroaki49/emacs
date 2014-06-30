@@ -19,14 +19,16 @@
 (blink-cursor-mode 1)
 
 ;;カラーテーマ
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/emacs-color-theme-solarized")
-;(load-theme 'solarized-dark t)
+                                        ;(load-theme 'solarized-dark t)
 (require 'color-theme)
-;; (eval-after-load "color-theme"
-;;   '(progn
-;;      (color-theme-initialize)
-;;     (load-theme 'solarized-dark t)))
+
+(if (eq window-system 'nil)
+    (eval-after-load "color-theme"
+      '(progn
+         (color-theme-initialize)
+         (color-theme-molokai))))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/")
 (setq molokai-theme-kit t)

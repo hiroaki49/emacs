@@ -26,7 +26,7 @@
     sass-mode
     scss-mode
     smooth-scroll
-;;    tabbar
+    tabbar
     undo-tree
     wgrep
     ))
