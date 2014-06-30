@@ -6,7 +6,7 @@
 (require 'tabbar nil t)
 
 ;; tabbarを有効にする
-(tabbar-mode 1)
+;;(tabbar-mode 1)
 
 ;; ボタンをシンプルにする
 (setq tabbar-home-button-enabled "")
