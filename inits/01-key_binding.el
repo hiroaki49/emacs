@@ -28,17 +28,18 @@
         (split-window-horizontally-n 3)
       (split-window-horizontally)))
   (other-window 1))
-(global-set-key (kbd "C-:") 'other-window-or-split)
 (global-set-key (kbd "C-z") 'delete-window)
-
+(if (eq window-system 'ns)
+    (global-set-key (kbd "C-:") 'other-window-or-split)
+  (global-set-key (kbd "C-c l") 'other-window-or-split))
 
 ;; ウィンドウの移動、あまり使わない？
-(define-prefix-command 'windmove-map)
-(global-set-key (kbd "C-c") 'windmove-map)
-(define-key windmove-map "h" 'windmove-left)
-(define-key windmove-map "j" 'windmove-down)
-(define-key windmove-map "k" 'windmove-up)
-(define-key windmove-map "l" 'windmove-right)
+;; (define-prefix-command 'windmove-map)
+;; (global-set-key (kbd "C-c") 'windmove-map)
+;; (define-key windmove-map "h" 'windmove-left)
+;; (define-key windmove-map "j" 'windmove-down)
+;; (define-key windmove-map "k" 'windmove-up)
+;; (define-key windmove-map "l" 'windmove-right)
 
 ;; ctrl+aで行頭に
 (defun beginning-of-indented-line (current-point)

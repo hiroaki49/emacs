@@ -2,7 +2,14 @@
 
 ;;anythingの設定
 (require 'anything)
-(global-set-key (kbd "C-x ;") 'anything) ;; C-x ; でanything起動
+(require 'anything-config)
+(setq anything-sources (list anything-c-source-buffers
+                             anything-c-source-bookmarks
+                             anything-c-source-recentf
+                             anything-c-source-file-name-history
+                             anything-c-source-locate))
+;;(global-set-key (kbd "C-x ;") 'anything) ;; C-x ; でanything起動
+;;30-eshellで定義
 (require 'anything-startup)
 (global-set-key (kbd "C-x b") 'anything-for-files)
 (global-set-key (kbd "M-y") 'anything-show-kill-ring)

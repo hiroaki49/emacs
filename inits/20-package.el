@@ -12,6 +12,7 @@
 (defvar installing-package-list
   '(
     anything
+    anything-config
     auto-complete
     color-moccur
     color-theme
