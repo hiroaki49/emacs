@@ -34,12 +34,6 @@
   (global-set-key (kbd "C-c l") 'other-window-or-split))
 
 ;; ウィンドウの移動、あまり使わない？
-;; (define-prefix-command 'windmove-map)
-;; (global-set-key (kbd "C-c") 'windmove-map)
-;; (define-key windmove-map "h" 'windmove-left)
-;; (define-key windmove-map "j" 'windmove-down)
-;; (define-key windmove-map "k" 'windmove-up)
-;; (define-key windmove-map "l" 'windmove-right)
 
 ;; ctrl+aで行頭に
 (defun beginning-of-indented-line (current-point)
