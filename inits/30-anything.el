@@ -10,7 +10,7 @@
                              anything-c-source-file-name-history
                              anything-c-source-locate))
 ;; 自動でimenuのインデックスを作る 
-(setq imenu-auto-rescan t)
+;(setq imenu-auto-rescan t)
 
 ;;(global-set-key (kbd "C-x ;") 'anything) ;; C-x ; でanything起動
 ;;30-eshellで定義
