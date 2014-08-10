@@ -15,7 +15,7 @@
      anything-c-moccur-enable-initial-pattern t))
 (global-set-key (kbd "C-M-o")
                 'anything-c-moccur-occur-by-moccur)
-(global-set-key (kbd "C-M-p")
+(global-set-key (kbd "C-M-m")
                 'moccur)
 
 ;; moccur-editを加える
