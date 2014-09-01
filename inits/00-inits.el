@@ -19,10 +19,10 @@
 (scroll-bar-mode -1)
 
 ;; 行番号を常に表示する
-(global-linum-mode t)
-(setq linum-delay t)
-(defadvice linum-schedule (around my-linum-schedule () activate)
-  (run-with-idle-timer 0.2 nil #'linum-update-current))
+;; (global-linum-mode t)
+;; (setq linum-delay t)
+;; (defadvice linum-schedule (around my-linum-schedule () activate)
+;;   (run-with-idle-timer 0.2 nil #'linum-update-current))
 
 ;; ホームディレクトリを初期ディレクトリにする
 (cd "~/")
@@ -100,10 +100,10 @@
 (setq eshell-cmpl-ignore-case t)
 
 ;; バックアップを残さない
-(setq make-backup-files nil)
+(setq make-backup-files t)
 
 ;;; 終了時にオートセーブファイルを消す
-(setq delete-auto-save-files t)
+;;(setq delete-auto-save-files t)
 
 ;; socketをセーブ
 ;;(setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
@@ -112,3 +112,25 @@
 ;;(when (eq system-type 'darwin)
 ;;  (setq ns-command-modifier (quote meta)))
 ;;;
+
+;; 括弧を自動補完
+(electric-pair-mode 1)
+
+;;auto-save
+(let ((target-dir (expand-file-name "~/*"))
+      (dest-dir (expand-file-name "~/.emacs.d/backup/")))
+
+  ;; ①自動保存ファイル(#*#)の作成先変更
+  (add-to-list 'auto-save-file-name-transforms
+               `(,(concat target-dir "\\([^/]*/\\)*\\([^/]*\\)$")
+                 ,(concat dest-dir "\\2")
+                 t))
+
+  ;; ③バックアップファイル(*~)の作成先変更
+  (add-to-list 'backup-directory-alist (cons target-dir dest-dir))
+
+  ;; ④自動保存リスト(.saves-<PID>-<HOSTNAME>)の作成先変更
+  (setq auto-save-list-file-prefix (expand-file-name ".saves-" dest-dir)))
+
+;;save
+(setq auto-save-interval 10)
