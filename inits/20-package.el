@@ -17,10 +17,13 @@
     color-moccur
     color-theme
     color-theme-molokai
+    dirtree
     exec-path-from-shell
     flycheck
     git-gutter-fringe
     haml-mode
+    magit
+    magit-find-file
     php-mode
     popwin
     recentf-ext

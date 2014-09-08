@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <14/08/26 23:08:33 /Users/diverta/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <14/09/08 13:53:25 /Users/diverta/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -27,4 +27,22 @@
   ("remote-path"
    ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
   ("remote-shell" "/bin/sh")
-  ("busybox" nil)))
+  ("busybox" nil))
+ (["ssh" "root" "192.168.33.10" nil nil]
+  ("uname" "Linux 2.6.32-358.23.2.el6.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("busybox" nil)
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("readlink" "\\readlink")
+  ("uid-integer" 0)))
