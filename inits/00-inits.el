@@ -28,7 +28,7 @@
 (cd "~/")
 
 ;; tab 幅を 4 に設定
-(setq default-tab-width 4)
+(setq tab-width 4)
 
 ;インデントにはスペースを用いる
 (setq-default indent-tabs-mode nil)
@@ -111,4 +111,8 @@
 ;; コマンドをめたキーとして使う（iterm）
 ;;(when (eq system-type 'darwin)
 ;;  (setq ns-command-modifier (quote meta)))
+
+;; 括弧
+(electric-pair-mode 1)
+
 ;;;

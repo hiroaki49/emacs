@@ -9,34 +9,100 @@
 ;Initialize
 (package-initialize)
 
-(defvar installing-package-list
-  '(
-    anything
-    anything-config
-    auto-complete
-    color-moccur
-    color-theme
-    color-theme-molokai
-    exec-path-from-shell
-    flycheck
-    git-gutter-fringe
-    haml-mode
-    php-mode
-    popwin
-    recentf-ext
-    sass-mode
-    scss-mode
-    smooth-scroll
-    tabbar
-    undo-tree
-    wgrep
-    ))
+;; (defvar installing-package-list
+;;   '(
+;;     anything
+;;     anything-config
+;;     auto-complete
+;;     color-moccur
+;;     color-theme
+;;     color-theme-molokai
+;;     dirtree
+;;     ensime
+;;     exec-path-from-shell
+;;     flycheck
+;;     git-gutter-fringe
+;;     go-mode
+;;     go-autocomplete
+;;     haml-mode
+;;     php-mode
+;;     popwin
+;;     recentf-ext
+;;     sass-mode
+;;     sbt-mode
+;;     scala-mode2
+;;     scss-mode
+;;     undo-tree
+;;     wgrep
+;;     ))
 
-(let ((not-installed (loop for x in installing-package-list
-                            when (not (package-installed-p x))
-                            collect x)))
-  (when not-installed
-    (package-refresh-contents)
-    (dolist (pkg not-installed)
-        (package-install pkg))))
+;; (let ((not-installed (loop for x in installing-package-list
+;;                             when (not (package-installed-p x))
+;;                             collect x)))
+;;   (when not-installed
+;;     (package-refresh-contents)
+;;     (dolist (pkg not-installed)
+;;         (package-install pkg))))
+
+;pathの引き継ぎ package
+(exec-path-from-shell-initialize)
+
+;git gutter
+(require 'git-gutter-fringe)
+(global-git-gutter-mode)
+
+;; wgrep
+(require 'wgrep)
+(setq wgrep-enable-key "r")
+
+;; smooth_scroll
+;; (require 'smooth-scroll)
+;; (smooth-scroll-mode t)
+
+(require 'dirtree)
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;(setq ensime-default-server-port 9000)
+
+(require 'projectile)
+(projectile-global-mode)
+
+(require 'projectile-rails)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+
+;;enh-ruby
+(autoload 'enh-ruby-mode "enh-ruby-mode"
+  "Mode for editing ruby source files" t)
+(add-to-list 'auto-mode-alist '("\\.rb$latex " . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
+
+;rhtml
+(require 'rhtml-mode)
+
+; robe
+(autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
+(autoload 'robe-ac-setup "robe-ac" "robe auto-complete" nil nil)
+(add-hook 'robe-mode-hook 'robe-ac-setup)
+
+;;yasnippet
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"
+        "~/.emacs.d/snippets/yasnippets-rails"
+        "~/.emacs.d/snippets/yasnippet-ruby-mode"
+        "~/.emacs.d/elpa/yasnippet-20141102.1554/snippets"
+        ))
+(yas-load-directory "~/.emacs.d/snippets")
+(yas-load-directory "~/.emacs.d/snippets/yasnippets-rails")
+(yas-load-directory "~/.emacs.d/snippets/yasnippet-ruby-mode")
+(yas-global-mode 1)
+
+;; 既存スニペットを挿入する
+(define-key yas-minor-mode-map (kbd "C-x y i") 'yas-insert-snippet)
+;; 新規スニペットを作成するバッファを用意する
+(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;; 既存スニペットを閲覧・編集する
+(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+
 ;;;

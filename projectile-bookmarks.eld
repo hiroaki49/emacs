@@ -1,0 +1,1 @@
+("~/develop/progate/twitter/" "~/.emacs.d/" "~/diverta/rcms/RCMS-sites/" "~/diverta/rcms/RCMS-OpenDev-ClosedBeta/" "~/is/14/winter/cpu/yebi/" "~/is/13/jikken/cpu/code/tomorrow/" "~/.emacs.d/snippets/yasnippets-rails/" "~/diverta/rcms/RCMS-encrypt/" "~/is/13/work/")
