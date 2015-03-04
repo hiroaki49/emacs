@@ -17,7 +17,8 @@
 
 ;;; ベースとなるソースを指定
 (defvar my-ac-sources
-              '(ac-source-abbrev
+              '(ac-source-yasnippet
+                ac-source-abbrev
                 ac-source-dictionary
                 ac-source-words-in-same-mode-buffers))
 

@@ -16,4 +16,10 @@
 (run-with-idle-timer 30 t 'recentf-save-list)
 (recentf-mode 1)
 
+;rhtml
+(add-hook 'rhtml-mode-hook
+          (lambda()
+            (setq sgml-basic-offset 4)
+            (setq indent-tabs-mode nil)))
+
 ;;;

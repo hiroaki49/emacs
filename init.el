@@ -49,14 +49,15 @@
     (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
 
 
-(message "window-system: %s" window-system)
+(message "window-system:  %s" window-system)
 
 ;; UTF-8とする
 (prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
+;; (set-default-coding-systems 'utf-8)
+;; (set-keyboard-coding-system 'utf-8)
+;; (set-terminal-coding-system 'utf-8)
+;; (set-buffer-file-coding-system 'utf-8)
+;; (set-language-environment 'Japanese)
 
 ;; emacsclient でアクセスした時の文字コード設定
 ;; バグ: "emacsclient -c" で起動すると実行されない

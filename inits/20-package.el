@@ -3,7 +3,7 @@
 ;package
 (require 'package)
 (setq package-archives '( 
-("gnu" . "http://elpa.gnu.org/packages/") 
+("gnu" . "http://elpa.gnu.rg/packages/") 
 ("marmalade" . "http://marmalade-repo.org/packages/") 
 ("melpa" . "http://melpa.milkbox.net/packages/")))
 ;Initialize
@@ -77,6 +77,16 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
 
+;;ruby-electric
+(require 'ruby-electric)
+(add-hook 'enh-ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
+
+;; ruby-block.el --- highlight matching block
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
+
 ;rhtml
 (require 'rhtml-mode)
 
@@ -89,13 +99,13 @@
 (require 'yasnippet)
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"
-        "~/.emacs.d/snippets/yasnippets-rails"
-        "~/.emacs.d/snippets/yasnippet-ruby-mode"
+        "~/.emacs.d/snippets/yasnippets-rails/rails-snippets"
+        "~/.emacs.d/snippets/enh-ruby-mode"
         "~/.emacs.d/elpa/yasnippet-20141102.1554/snippets"
         ))
 (yas-load-directory "~/.emacs.d/snippets")
-(yas-load-directory "~/.emacs.d/snippets/yasnippets-rails")
-(yas-load-directory "~/.emacs.d/snippets/yasnippet-ruby-mode")
+(yas-load-directory "~/.emacs.d/snippets/yasnippets-rails/rails-snippets")
+(yas-load-directory "~/.emacs.d/snippets/enh-ruby-mode")
 (yas-global-mode 1)
 
 ;; 既存スニペットを挿入する
@@ -105,4 +115,16 @@
 ;; 既存スニペットを閲覧・編集する
 (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
+;;トリガーキーをTABからSPCに変更
+(define-key yas-minor-mode-map (kbd "SPC") 'yas/expand)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+
+;; chromeの拡張
+(require 'edit-server)
+(edit-server-start)
+
+;;open-junk
+(require 'open-junk-file)
+(setq open-junk-file-format "~/develop/junk/%Y/%m/%Y-%m-%d-%H%M%S.")
+(global-set-key (kbd "C-x j") 'open-junk-file)
 ;;;
