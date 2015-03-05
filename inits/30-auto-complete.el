@@ -6,7 +6,6 @@
 (add-to-list 'ac-dictionary-directories "/Users/hiroaki/.emacs.d/elisp/ac-dict")
 (ac-config-default)
 (global-auto-complete-mode t)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 ;;; 適用するメジャーモードを足す
 (add-to-list 'ac-modes 'scss-mode)

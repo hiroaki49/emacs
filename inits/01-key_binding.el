@@ -33,14 +33,8 @@
 (if (eq window-system 'ns)
     (global-set-key (kbd "C-<tab>") 'other-window-or-split)
   (global-set-key (kbd "C-c l") 'other-window-or-split))
+(global-set-key (kbd "C-:") 'other-window-or-split)
 
-;; ウィンドウの移動、あまり使わない？
-;; (define-prefix-command 'windmove-map)
-;; (global-set-key (kbd "C-c") 'windmove-map)
-;; (define-key windmove-map "h" 'windmove-left)
-;; (define-key windmove-map "j" 'windmove-down)
-;; (define-key windmove-map "k" 'windmove-up)
-;; (define-key windmove-map "l" 'windmove-right)
 
 ;; ctrl+aで行頭に
 (defun beginning-of-indented-line (current-point)
@@ -76,16 +70,13 @@
      (t (beginning-of-visual-line)))))
 (global-set-key "\C-a" 'beginning-of-visual-indented-line)
 
+
 ;クリップボードの設定
 (global-set-key "\M-w" 'clipboard-kill-ring-save)  ; クリップボードにコピー
 (global-set-key "\C-w" 'clipboard-kill-region)     ; 切り取ってクリップボードへ
 
 ;バックスペースの設定
 (global-set-key "\C-h" 'delete-backward-char)
-
-;移動の設定
-(global-set-key "\M-n" 'forward-paragraph)
-(global-set-key "\M-p" 'backward-paragraph)
 
 ;バッファの再読み込み
 (global-set-key (kbd "C-c r") 'revert-buffer)

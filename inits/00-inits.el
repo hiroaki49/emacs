@@ -2,11 +2,7 @@
 
 ;;基本設定
 ;; UTF-8とする
-(prefer-coding-system 'utf-8)
-;; (set-default-coding-systems 'utf-8)
-;; (set-keyboard-coding-system 'utf-8)
-;; (set-terminal-coding-system 'utf-8)
-;; (set-buffer-file-coding-system 'utf-8)
+;; init.el topに移動
 
 
 ;; 起動時の画面はいらない
@@ -72,6 +68,7 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
+
 ;; [基本] トラックパッド用のスクロール設定
 (defun scroll-down-with-lines ()
   "" (interactive) (scroll-down 3))
@@ -93,20 +90,24 @@
         (backward-char)))
 
 ;; 行末の空白を強調表示
-;;(setq-default show-trailing-whitespace t)
-;(set-face-background 'trailing-whitespace "#b14770")
+(setq-default show-trailing-whitespace t)
+(set-face-background 'trailing-whitespace "#b14770")
 
 ;; 補完時に大文字小文字を区別しない
 (setq eshell-cmpl-ignore-case t)
 
-;; バックアップを残さない
-(setq make-backup-files nil)
+;; create backup file in ~/.emacs.d/backup
+(setq make-backup-files t)
+(setq backup-directory-alist
+  (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup"))
+    backup-directory-alist))
+
+;; create auto-save file in ~/.emacs.d/backup
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name "~/.emacs.d/backup/") t)))
 
 ;;; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
-
-;; socketをセーブ
-;;(setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
 
 ;; コマンドをめたキーとして使う（iterm）
 ;;(when (eq system-type 'darwin)

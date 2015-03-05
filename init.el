@@ -1,14 +1,14 @@
 ;;; init.el
 
-
-;; ~/.emacs.d/site-lisp 以下全部読み込み
-;; (let ((default-directory (expand-file-name "~/.emacs.d/elisp")))
-;;   (add-to-list 'load-path default-directory)
-;;   (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
-;;       (normal-top-level-add-subdirs-to-load-path)))
+;; caskを導入！
+(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
+(cask-initialize)
+(require 'pallet)
+(pallet-mode t)
 
 (require 'cl)
 
+;;ベンチマークテスト
 ;; (defadvice require (around require-benchmark activate)
 ;;   (let* ((before (current-time))
 ;;          (result ad-do-it)
@@ -37,16 +37,17 @@
          )))))
 
 ;;; initsフォルダのみ、保存時に自動コンパイルして即反映させる
-(defun auto-save-byte-compile-file ()
-  "Do `byte-compile-file' and reload setting immediately, When elisp file saved only in inits folder."
-  (interactive)
-  (when (or (equal default-directory inits_dir)
-            (equal default-directory (abbreviate-file-name inits_dir)))
-    (byte-compile-file buffer-file-name t)
-    ))
-(add-hook 'emacs-lisp-mode-hook
-  (lambda ()
-    (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
+;一旦なし
+;; (defun auto-save-byte-compile-file ()
+;;   "Do `byte-compile-file' and reload setting immediately, When elisp file saved only in inits folder."
+;;   (interactive)
+;;   (when (or (equal default-directory inits_dir)
+;;             (equal default-directory (abbreviate-file-name inits_dir)))
+;;     (byte-compile-file buffer-file-name t)
+;;     ))
+;; (add-hook 'emacs-lisp-mode-hook
+;;   (lambda ()
+;;     (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
 
 
 (message "window-system:  %s" window-system)
@@ -70,39 +71,18 @@
 (if (eq window-system 'nil)
     (color-theme-molokai))
 
-;基本設定
 
-;; ; バッファの移動
-;; (setq windmove-wrap-around t)
-;; (windmove-default-keybindings)
-
-;; ;; flymake
-;; (defun flymake-php-init ()
-;;   (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;;                      'flymake-create-temp-inplace))
-;;          (local-file (file-relative-name
-;;                       temp-file
-;;                       (file-name-directory buffer-file-name))))
-;;     (list "php" (list "-l" local-file))))
-;; (push '(".+\\.php$" flymake-php-init) flymake-allowed-file-name-masks)
-;; (push '("(Parse|Fatal) error: (.*) in (.*) on line ([0-9]+)" 3 4 nil 2) flymake-err-line-patterns)
-
-;; (add-hook 'php-mode-hook (flymake-mode t))
-
-
-
-
-;; ;;auto-install
-;; (require 'auto-install)
-;; (setq auto-install-directory "~/.emacs.d/elisp/") ;Emacs Lispをインストールするディレクトリの指定
-;; (auto-install-update-emacswiki-package-name t)
-;; (auto-install-compatibility-setup) ;install-elisp.elとコマンド名を同期
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default))))
+ '(custom-safe-themes
+   (quote
+    ("4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+ '(pallet-mode t)
+ '(yas-prompt-functions (quote (my-yas/prompt)))
+ '(yas-trigger-key "TAB"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

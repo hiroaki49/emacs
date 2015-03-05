@@ -1,0 +1,68 @@
+;;; 20-package.el
+
+;;読み込む順番の関係ないものだけ先に記述しておく
+
+;package
+(require 'package)
+(setq package-archives '( 
+("marmalade" . "http://marmalade-repo.org/packages/") 
+("melpa" . "http://melpa.milkbox.net/packages/")))
+
+
+;pathの引き継ぎ package
+(exec-path-from-shell-initialize)
+
+;git gutter
+(require 'git-gutter-fringe+)
+
+;; wgrep
+(require 'wgrep)
+;;; rでwgrepモードにする
+(setf wgrep-enable-key "r")
+;;; wgrep終了時にバッファを保存
+(setq wgrep-auto-save-buffer t)
+;;; read-only bufferにも変更を適用する
+(setq wgrep-change-readonly-file t)
+
+;;あんま使わないかも
+;;neotree
+(require 'neotree)
+
+;;scala用
+;; (require 'ensime)
+;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;(setq ensime-default-server-port 9000)
+
+
+;;projectile
+;;helmと一緒に使うべし
+(require 'projectile)
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
+
+;;open-junk
+(require 'open-junk-file)
+(setq open-junk-file-format "~/develop/junk/%Y/%m/%Y-%m-%d-%H%M%S.")
+(global-set-key (kbd "C-x j") 'open-junk-file)
+
+
+;recentf-ext
+;recentf
+(require 'recentf)
+(require 'recentf-ext)
+(setq recentf-auto-cleanup 'never) ;; disable before we start recentf!
+;;(require 'recentf)
+(setq recentf-max-saved-items 2000)
+;;(setq recentf-exclude '("^/[^/:]+:")) ;;tramp対策。
+(setq recentf-exclude '(".recentf"))
+;(setq recentf-auto-cleanup '10)
+(run-with-idle-timer 30 t 'recentf-save-list)
+(recentf-mode 1)
+
+
+;; chromeの拡張
+(require 'edit-server)
+(edit-server-start)
+;;;
