@@ -141,8 +141,9 @@
 (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
 ;;トリガーキーをTABからSPCに変更
-(define-key yas-minor-mode-map (kbd "SPC") 'yas/expand)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
+;; (define-key yas-minor-mode-map (kbd "SPC") 'yas/expand)
+;; (define-key yas-minor-mode-map (kbd "TAB") nil)
+(custom-set-variables '(yas-trigger-key "TAB"))
 
 ;; chromeの拡張
 (require 'edit-server)
