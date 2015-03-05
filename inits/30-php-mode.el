@@ -28,14 +28,14 @@
 ;; (add-hook 'php-mode-hook 'flycheck-mode)
 
 
-;;emmet-mode
+emmet-mode
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; マークアップ言語全部で使う
 (add-hook 'css-mode-hook  'emmet-mode) ;; CSSにも使う
 (eval-after-load "emmet-mode"
   '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
-(keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
-(define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
+;; (keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
+;; (define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
 
 
 ;; ;; mmm-mode

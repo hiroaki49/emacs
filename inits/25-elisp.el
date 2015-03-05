@@ -15,8 +15,8 @@
 
 ;;rdefs
 (require 'anything)
-(require 'anything-rdefs)
-(add-hook 'enh-ruby-mode-hook
-          (lambda ()
-            (define-key enh-ruby-mode (kbd "C-M-r") 'anything-rdefs)))
+;; (require 'anything-rdefs)
+;; (add-hook 'enh-ruby-mode-hook
+;;           (lambda ()
+;;             (define-key enh-ruby-mode (kbd "C-M-r") 'anything-rdefs)))
 
