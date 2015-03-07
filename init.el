@@ -6,7 +6,7 @@
 (require 'pallet)
 (pallet-mode t)
 
-(require 'cl)
+;; (require 'cl)
 
 ;;ベンチマークテスト
 ;; (defadvice require (around require-benchmark activate)
@@ -37,17 +37,16 @@
          )))))
 
 ;;; initsフォルダのみ、保存時に自動コンパイルして即反映させる
-;一旦なし
-;; (defun auto-save-byte-compile-file ()
-;;   "Do `byte-compile-file' and reload setting immediately, When elisp file saved only in inits folder."
-;;   (interactive)
-;;   (when (or (equal default-directory inits_dir)
-;;             (equal default-directory (abbreviate-file-name inits_dir)))
-;;     (byte-compile-file buffer-file-name t)
-;;     ))
-;; (add-hook 'emacs-lisp-mode-hook
-;;   (lambda ()
-;;     (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
+(defun auto-save-byte-compile-file ()
+  "Do `byte-compile-file' and reload setting immediately, When elisp file saved only in inits folder."
+  (interactive)
+  (when (or (equal default-directory inits_dir)
+            (equal default-directory (abbreviate-file-name inits_dir)))
+    (byte-compile-file buffer-file-name t)
+    ))
+(add-hook 'emacs-lisp-mode-hook
+  (lambda ()
+    (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
 
 
 (message "window-system:  %s" window-system)
@@ -79,7 +78,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+    ("4587f73c1f503f01e82ae7da64202834c93e83b10624517145c9e237103ad650" "4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(pallet-mode t)
  '(yas-prompt-functions (quote (my-yas/prompt)))
  '(yas-trigger-key "TAB"))

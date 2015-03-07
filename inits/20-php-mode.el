@@ -6,6 +6,16 @@
 (require 'php-mode)
 (add-hook 'php-mode-hook 'php-enable-default-coding-style)
 
+(add-hook  'php-mode-hook
+                      (lambda ()
+                        (when (require 'auto-complete nil t)
+                          (make-variable-buffer-local 'ac-sources)
+                          (add-to-list 'ac-sources 'ac-source-php-completion)
+                          ;; if you like patial match,
+                          ;; use `ac-source-php-completion-patial' instead of `ac-source-php-completion'.
+                          ;; (add-to-list 'ac-sources 'ac-source-php-completion-patial)
+                          (auto-complete-mode t))))
+
 ;; (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 ;; (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))

@@ -5,6 +5,7 @@
 ;package
 (require 'package)
 (setq package-archives '( 
+("gnu" . "http://elpa.gnu.org/packages/")
 ("marmalade" . "http://marmalade-repo.org/packages/") 
 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
@@ -26,7 +27,7 @@
 
 ;;あんま使わないかも
 ;;neotree
-(require 'neotree)
+;; (require 'neotree)
 
 ;;scala用
 ;; (require 'ensime)
@@ -63,6 +64,8 @@
 
 
 ;; chromeの拡張
-(require 'edit-server)
-(edit-server-start)
+(if (eq window-system 'ns)
+    (when (require 'edit-server nil t)
+      (setq edit-server-new-frame nil)
+      (edit-server-start)))
 ;;;

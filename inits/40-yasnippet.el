@@ -20,20 +20,25 @@
 
 ;;トリガーキーの設定
 (custom-set-variables '(yas-trigger-key "C-o"))
+;;トリガーキーをTABからSPCに変更
+(define-key yas-minor-mode-map (kbd "C-o") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
 
 
 ;; yasnippetとhelmの対応
-(defun my-yas/prompt (prompt choices &optional display-fn)
+(defun my-yas-prompt (prompt choices &optional display-fn)
   (let* ((names (loop for choice in choices
                       collect (or (and display-fn (funcall display-fn choice))
-                                  coice)))
+                                  choice)))
         (selected (helm-other-buffer
                     `(((name . ,(format "%s" prompt))
                        (candidates . names)
                        (action . (("Insert snippet" . (lambda (arg) arg))))))
-                    "*helm yas/prompt*")))
+                    "*helm yas-prompt*")))
     (if selected
         (let ((n (position selected names :test 'equal)))
           (nth n choices))
       (signal 'quit "user quit!"))))
-(custom-set-variables '(yas/prompt-functions '(my-yas/prompt)))
+(custom-set-variables '(yas-prompt-functions '(my-yas-prompt)))
+
+;;;

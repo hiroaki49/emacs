@@ -66,7 +66,7 @@
 (add-hook 'ruby-mode-hook 'ruby-mode-hook-rcodetools)
 
 ;;rdefs
-(require 'anything)
+;; (require 'anything)
 ;; (require 'anything-rdefs)
 ;; (add-hook 'enh-ruby-mode-hook
 ;;           (lambda ()

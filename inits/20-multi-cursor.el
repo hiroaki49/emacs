@@ -8,7 +8,7 @@
 (global-set-key (kbd "C-M-c") 'mc/edit-lines)
 (global-set-key (kbd "C-M-r") 'mc/mark-all-in-region)
 
-(global-unset-key "\C-t")
+(global-unset-key "\C-q")
 
 (smartrep-define-key global-map "C-q"
   '(("C-q"      . 'mc/mark-next-like-this)

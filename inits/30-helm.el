@@ -1,6 +1,7 @@
 ;;; helm.el
 
 (require 'helm)
+(require 'helm-ag)
 (require 'helm-config)
 (require 'helm-migemo)
 (require 'helm-c-yasnippet)
@@ -11,9 +12,12 @@
 (require 'helm-descbinds)
 
 ;;; キー設定i
-(global-set-key (kbd "C-;") 'helm-for-files)
+(global-set-key (kbd "C-;") 'helm-mini)
+(global-set-key (kbd "C-x ;") 'helm-mini)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "M-o") 'helm-swoop)
+(global-set-key (kbd "C-M-o") 'helm-do-ag)
 (define-key helm-map (kbd "C-j") 'helm-maybe-exit-minibuffer)
 (define-key helm-map (kbd "M-j") 'helm-select-3rd-action)
 (define-key helm-map (kbd "C-;") 'anything-keyboard-quit)

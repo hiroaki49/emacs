@@ -21,6 +21,13 @@
                 ac-source-dictionary
                 ac-source-words-in-same-mode-buffers))
 
+;;; web mode
+(setq web-mode-ac-sources-alist
+      '(("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
+        ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+        ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
+
+
 
 
 ;;; yasnippetのbindingを指定するとエラーが出るので回避する方法。

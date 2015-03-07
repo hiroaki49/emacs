@@ -1,3 +1,4 @@
+(source gnu)
 (source marmalade)
 (source melpa)
 
@@ -26,8 +27,6 @@
 (depends-on "expand-region")
 (depends-on "f")
 (depends-on "flycheck")
-(depends-on "flycheck-color-mode-line")
-(depends-on "flycheck-pos-tip")
 (depends-on "flymake")
 (depends-on "fringe-helper")
 (depends-on "git-commit-mode")
@@ -38,6 +37,7 @@
 (depends-on "go-eldoc")
 (depends-on "go-mode")
 (depends-on "haml-mode")
+(depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-c-moccur")
 (depends-on "helm-c-yasnippet")
@@ -72,6 +72,11 @@
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "php-mode")
+;; php-completion
+(depends-on "php-completion"
+        :git "https://github.com/suzuki/php-completion.git"
+                :branch "develop"
+                        :files ("*.el" "phpcmp-index-of-*"))
 (depends-on "pkg-info")
 (depends-on "popup")
 (depends-on "popwin")

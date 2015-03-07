@@ -1,5 +1,6 @@
 ;;; 30-flycheck.el
 
+(require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;flycheck package
