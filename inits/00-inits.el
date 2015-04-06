@@ -116,4 +116,8 @@
 ;; 括弧
 (electric-pair-mode 1)
 
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
+
 ;;;

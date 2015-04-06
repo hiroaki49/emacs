@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <14/10/16 21:01:02 /Users/hiroaki/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <15/03/19 18:16:06 /Users/hiroaki/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -21,5 +21,28 @@
   ("gid-integer" 0)
   ("readlink" nil)
   ("uid-integer" 0))
- (["ssh" "vagrant" "127.0.0.1" nil nil]
+ (["ssh" "diverta" "192.168.59.103#49154" nil nil]
+  ("uname" "Linux 3.16.7-tinycore64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("file-exists" "test -e")
+  ("readlink" "\\readlink")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 500)
+  ("gid-string" "diverta")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("uid-integer" 500))
+ (["ssh" nil "192.168.59.103#49153" nil nil]
+  nil)
+ (["ssh" nil "192.168.59.103" nil nil]
+  nil)
+ (["ssh" "diverta" "192.168.59.103" nil nil]
   nil))

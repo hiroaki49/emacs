@@ -2,10 +2,12 @@
 (source marmalade)
 (source melpa)
 
+(depends-on "2048-game")
 (depends-on "ac-js2")
 (depends-on "ace-isearch")
 (depends-on "ace-jump-mode")
 (depends-on "ag")
+(depends-on "anzu")
 (depends-on "auto-complete")
 (depends-on "auto-dictionary")
 (depends-on "caml")
@@ -15,6 +17,7 @@
 (depends-on "color-theme")
 (depends-on "color-theme-molokai")
 (depends-on "color-theme-monokai")
+(depends-on "color-theme-sanityinc-tomorrow")
 (depends-on "dash")
 (depends-on "dired+")
 (depends-on "dirtree")
@@ -33,6 +36,7 @@
 (depends-on "git-gutter+")
 (depends-on "git-gutter-fringe+")
 (depends-on "git-rebase-mode")
+(depends-on "gitconfig-mode")
 (depends-on "go-autocomplete")
 (depends-on "go-eldoc")
 (depends-on "go-mode")
@@ -71,12 +75,8 @@
 (depends-on "open-junk-file")
 (depends-on "package-build")
 (depends-on "pallet")
+(depends-on "php-completion" :git "https://github.com/suzuki/php-completion.git" :branch "develop" :files ("*.el" "phpcmp-index-of-*"))
 (depends-on "php-mode")
-;; php-completion
-(depends-on "php-completion"
-        :git "https://github.com/suzuki/php-completion.git"
-                :branch "develop"
-                        :files ("*.el" "phpcmp-index-of-*"))
 (depends-on "pkg-info")
 (depends-on "popup")
 (depends-on "popwin")

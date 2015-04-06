@@ -32,7 +32,7 @@
 ;; itermではC-<tab>はC-c lに置換
 (if (eq window-system 'ns)
     (global-set-key (kbd "C-<tab>") 'other-window-or-split)
-  (global-set-key (kbd "C-c l") 'other-window-or-split))
+    (global-set-key (kbd "C-c l") 'other-window-or-split))
 (global-set-key (kbd "C-:") 'other-window-or-split)
 
 

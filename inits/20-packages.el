@@ -62,10 +62,23 @@
 (run-with-idle-timer 30 t 'recentf-save-list)
 (recentf-mode 1)
 
+;anzu
+(require 'anzu)
+(global-anzu-mode +1)
+
+(set-face-attribute 'anzu-mode-line nil
+                    :foreground "yellow" :weight 'bold)
+
+;;color
+(require 'color-theme-sanityinc-tomorrow)
 
 ;; chromeの拡張
 (if (eq window-system 'ns)
     (when (require 'edit-server nil t)
       (setq edit-server-new-frame nil)
       (edit-server-start)))
+
+;; ;; ace-jump
+;; (require 'ace-jump-mode)
+;; (global-set-key (kbd "M-i") 'ace-jump-mode)
 ;;;
