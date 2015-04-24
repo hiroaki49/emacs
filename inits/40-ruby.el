@@ -39,9 +39,9 @@
 
 
 ;;ruby-electric
-(require 'ruby-electric)
-(add-hook 'enh-ruby-mode-hook '(lambda () (ruby-electric-mode t)))
-(setq ruby-electric-expand-delimiters-list nil)
+;; (require 'ruby-electric)
+;; (add-hook 'enh-ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+;; (setq ruby-electric-expand-delimiters-list nil)
 
 ;; ruby-block.el --- highlight matching block
 (require 'ruby-block)
@@ -57,13 +57,13 @@
 (add-hook 'robe-mode-hook 'robe-ac-setup)
 
 ;; rcodetools
-(require 'rcodetools)
-(setq rct-find-tag-if-available nil)
-(defun enh-ruby-mode-hook-rcodetools ()
-  (define-key ruby-mode-map "\M-\C-i" 'rct-complete-symbol)
-  (define-key ruby-mode-map "\C-c\C-t" 'ruby-toggle-buffer)
-  (define-key ruby-mode-map "\C-c\C-f" 'rct-ri))
-(add-hook 'ruby-mode-hook 'ruby-mode-hook-rcodetools)
+;; (require 'rcodetools)
+;; (setq rct-find-tag-if-available nil)
+;; (defun enh-ruby-mode-hook-rcodetools ()
+;;   (define-key ruby-mode-map "\M-\C-i" 'rct-complete-symbol)
+;;   (define-key ruby-mode-map "\C-c\C-t" 'ruby-toggle-buffer)
+;;   (define-key ruby-mode-map "\C-c\C-f" 'rct-ri))
+;; (add-hook 'ruby-mode-hook 'ruby-mode-hook-rcodetools)
 
 ;;rdefs
 ;; (require 'anything)
