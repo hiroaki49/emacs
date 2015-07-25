@@ -9,6 +9,5 @@
       '(
         beginning-of-visual-indented-line
         clipboard-kill-ring-save
-        other-window-or-split
         yas-expand
         ))
