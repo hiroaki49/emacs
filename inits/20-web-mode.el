@@ -18,15 +18,28 @@ setq web-mode-engines-alist
 ;; インデント関係
 (defun web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset   4)
+  (setq web-mode-markup-indent-offset 4)
   (setq web-mode-css-offset    4)
   (setq web-mode-script-offset 4)
   (setq web-mode-php-offset    4)
   (setq web-mode-java-offset   4)
   (setq web-mode-asp-offset    4)
-  (setq indent-tabs-mode t)
-  (setq tab-width 4))
+  (setq tab-width 4)
+  (setq-default indent-tabs-mode nil)
+)
 (add-hook 'web-mode-hook 'web-mode-hook)
+
+
+(defun web-mode-indent (num)
+  (interactive "nIndent: ")
+  (setq web-mode-markup-indent-offset num)
+  (setq web-mode-css-indent-offset num)
+  (setq web-mode-style-padding num)
+  (setq web-mode-code-indent-offset num)
+  (setq web-mode-script-padding num)
+  (setq web-mode-block-padding num)
+  )
+(web-mode-indent 4)
 
 ;; 色の設定
 (custom-set-faces

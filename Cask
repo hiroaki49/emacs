@@ -26,6 +26,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "ensime")
 (depends-on "epl")
+(depends-on "evil")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
 (depends-on "f")

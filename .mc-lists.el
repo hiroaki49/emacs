@@ -8,4 +8,6 @@
 (setq mc/cmds-to-run-once
       '(
         beginning-of-visual-indented-line
+        clipboard-kill-ring-save
+        yas-expand
         ))
