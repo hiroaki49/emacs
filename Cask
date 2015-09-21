@@ -51,11 +51,8 @@
 (depends-on "helm-themes")
 (depends-on "hide-comnt")
 (depends-on "hide-region")
-<<<<<<< HEAD
 (depends-on "highlight-blocks")
-=======
 (depends-on "inf-php")
->>>>>>> update on Sep 21
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "init-loader")
