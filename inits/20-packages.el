@@ -4,9 +4,9 @@
 
 ;package
 (require 'package)
-(setq package-archives '( 
+(setq package-archives '(
 ("gnu" . "http://elpa.gnu.org/packages/")
-("marmalade" . "http://marmalade-repo.org/packages/") 
+("marmalade" . "http://marmalade-repo.org/packages/")
 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 
@@ -14,7 +14,7 @@
 (exec-path-from-shell-initialize)
 
 ;git gutter
-(require 'git-gutter-fringe+)
+;; (require 'git-gutter-fringe+)
 
 ;; wgrep
 (require 'wgrep)
@@ -81,4 +81,14 @@
 ;; ;; ace-jump
 ;; (require 'ace-jump-mode)
 ;; (global-set-key (kbd "M-i") 'ace-jump-mode)
+
+;; ace-jump-zap
+(global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
+
+;;; 3つの表示方法どれか1つ選ぶ
+(which-key-setup-side-window-bottom)    ;ミニバッファ
+;; (which-key-setup-side-window-right)     ;右端
+;; (which-key-setup-side-window-right-bottom) ;両方使う
+
+(which-key-mode 1)
 ;;;

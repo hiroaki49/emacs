@@ -13,7 +13,15 @@
              (when (require 'auto-complete nil t)
              (make-variable-buffer-local 'ac-sources)
              (add-to-list 'ac-sources 'ac-source-php-completion)
+             ;;(payas/ac-setup)
              (auto-complete-mode t))))
+
+
+;;php-auto-yasnippets
+(require 'php-auto-yasnippets)
+(setq php-auto-yasnippet-php-program "~/.emacs.d/elisp/Create-PHP-YASnippet.php")
+(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+
 
 ;; (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 ;; (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))

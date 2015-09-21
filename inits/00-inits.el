@@ -119,5 +119,8 @@
 (require 'tramp)
 (setq tramp-default-method "ssh")
 
+;; ロックファイルを消す
+(setq create-lockfiles nil)
+
 
 ;;;
