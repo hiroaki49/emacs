@@ -6,6 +6,7 @@
 (depends-on "ac-js2")
 (depends-on "ace-isearch")
 (depends-on "ace-jump-mode")
+(depends-on "ace-jump-zap")
 (depends-on "ag")
 (depends-on "anzu")
 (depends-on "auto-complete")
@@ -33,8 +34,6 @@
 (depends-on "flycheck")
 (depends-on "flymake")
 (depends-on "fringe-helper")
-(depends-on "git-gutter+")
-(depends-on "git-gutter-fringe+")
 (depends-on "gitconfig-mode")
 (depends-on "go-autocomplete")
 (depends-on "go-eldoc")
@@ -52,7 +51,11 @@
 (depends-on "helm-themes")
 (depends-on "hide-comnt")
 (depends-on "hide-region")
+<<<<<<< HEAD
 (depends-on "highlight-blocks")
+=======
+(depends-on "inf-php")
+>>>>>>> update on Sep 21
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "init-loader")
@@ -103,6 +106,7 @@
 (depends-on "web-beautify")
 (depends-on "web-mode")
 (depends-on "wgrep")
+(depends-on "which-key")
 (depends-on "windata")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")

@@ -19,5 +19,6 @@ elpa/ac-html-20141215.2338/html-stuff/
 abbrev_defs
 .cask/
 *.eld
+.DS_Store
 recentf
 *.backup
