@@ -1,4 +1,4 @@
-;;; 50-php-mode.php
+;;; 50-php-mode.el
 
 
 ;; php-mode

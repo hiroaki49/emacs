@@ -12,10 +12,15 @@
 
 ;pathの引き継ぎ package
 (exec-path-from-shell-initialize)
+;; load environment variables
+;; 追記 GEMに関する環境変数を設定すると rbenv経由で rubyがうまく使えなかったので削除
+;; (let ((envs '("PATH" "VIRTUAL_ENV" "GOROOT" "GOPATH")))
+(let ((envs '("VIRTUAL_ENV" "GOROOT" "GOPATH")))
+  (exec-path-from-shell-copy-envs envs))
 
 ;git gutter
-(require 'git-gutter-fringe+)
-(global-git-gutter-mode +1)
+;; (require 'git-gutter-fringe+)
+;; (global-git-gutter-mode +1)
 
 ;; wgrep
 (require 'wgrep)
