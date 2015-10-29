@@ -4,7 +4,7 @@
 (require 'helm-ag)
 (require 'helm-config)
 (require 'helm-migemo)
-(require 'helm-c-yasnippet)
+;;(require 'helm-c-yasnippet)
 (require 'helm-c-moccur)
 (require 'helm-swoop)
 (require 'helm-mode)
@@ -12,8 +12,9 @@
 (require 'helm-descbinds)
 
 ;;; キー設定i
-(global-set-key (kbd "C-;") 'helm-mini)
+;;; (global-set-key (kbd "C-;") 'helm-mini)
 (global-set-key (kbd "C-x ;") 'helm-mini)
+(global-set-key (kbd "C-x C-;") 'helm-mini)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "M-o") 'helm-swoop)
@@ -38,8 +39,11 @@
 (helm-mode 1)
 
 ;;; helm-mode で無効にしたいコマンド
+
 ;; (add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
+
 (add-to-list 'helm-completing-read-handlers-alist '(dired . nil))
+
 ;; (add-to-list 'helm-completing-read-handlers-alist '(find-file-at-point . nil))
 ;; (add-to-list 'helm-completing-read-handlers-alist '(write-file . nil))
 ;; (add-to-list 'helm-completing-read-handlers-alist '(helm-c-yas-complete . nil))

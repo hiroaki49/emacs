@@ -12,11 +12,15 @@
 
 ;pathの引き継ぎ package
 (exec-path-from-shell-initialize)
+
 ;; load environment variables
 ;; 追記 GEMに関する環境変数を設定すると rbenv経由で rubyがうまく使えなかったので削除
 ;; (let ((envs '("PATH" "VIRTUAL_ENV" "GOROOT" "GOPATH")))
 (let ((envs '("VIRTUAL_ENV" "GOROOT" "GOPATH")))
   (exec-path-from-shell-copy-envs envs))
+
+;git gutter
+;; (require 'git-gutter-fringe+)
 
 ;; wgrep
 (require 'wgrep)
@@ -88,8 +92,15 @@
 (global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
 
 ;;; 3つの表示方法どれか1つ選ぶ
-(which-key-mode 1)
+
 (which-key-setup-side-window-bottom)    ;ミニバッファ
 ;; (which-key-setup-side-window-right)     ;右端
 ;; (which-key-setup-side-window-right-bottom) ;両方使う
+
+;; which-key-mode
+(which-key-mode 1)
+
+;; shrink-white-space
+(global-set-key (kbd "M-SPC") 'shrink-whitespace)
+
 ;;;

@@ -4,7 +4,7 @@
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
 ;;;### (autoloads nil nil ("php-completion-pkg.el" "php-completion.el")
-;;;;;;  (22066 8356 191511 0))
+;;;;;;  (21753 4374 960 0))
 
 ;;;***
 
