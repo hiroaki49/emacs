@@ -129,4 +129,7 @@
 ;; diredバッファでC-sした時にファイル名だけにマッチするように
 (setq dired-isearch-filenames t)
 
+;; 165が¥（円マーク） , 92が\（バックスラッシュ）を表す
+(define-key global-map [165] [92])
+
 ;;;

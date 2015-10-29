@@ -11,6 +11,11 @@
 ;;      (add-hook 'go-mode-hook 'go-eldoc-setup)))
 (require 'go-autocomplete)
 (require 'auto-complete-config)
+(require 'go-eldoc) ;; Don't need to require, if you install by package.el
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+
+(add-to-list 'load-path "~/gocode/src/github.com/dougm/goflymake")
+(require 'go-flymake)
 
 ;; (defvar my/helm-go-source
 ;;   '((name . "Helm Go")

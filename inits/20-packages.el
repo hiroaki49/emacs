@@ -18,10 +18,6 @@
 (let ((envs '("VIRTUAL_ENV" "GOROOT" "GOPATH")))
   (exec-path-from-shell-copy-envs envs))
 
-;git gutter
-;; (require 'git-gutter-fringe+)
-;; (global-git-gutter-mode +1)
-
 ;; wgrep
 (require 'wgrep)
 ;;; rでwgrepモードにする
@@ -92,9 +88,8 @@
 (global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
 
 ;;; 3つの表示方法どれか1つ選ぶ
+(which-key-mode 1)
 (which-key-setup-side-window-bottom)    ;ミニバッファ
 ;; (which-key-setup-side-window-right)     ;右端
 ;; (which-key-setup-side-window-right-bottom) ;両方使う
-
-(which-key-mode 1)
 ;;;
