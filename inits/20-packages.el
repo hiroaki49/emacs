@@ -90,5 +90,10 @@
 ;; (which-key-setup-side-window-right)     ;右端
 ;; (which-key-setup-side-window-right-bottom) ;両方使う
 
+;; which-key-mode
 (which-key-mode 1)
+
+;; shrink-white-space
+(global-set-key (kbd "M-SPC") 'shrink-whitespace)
+
 ;;;
