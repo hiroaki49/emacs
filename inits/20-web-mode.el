@@ -61,4 +61,12 @@ setq web-mode-engines-alist
    ((t (:foreground "#FF7F00"))))                          ; css 疑似クラス
  '(web-mode-css-at-rule-face
    ((t (:foreground "#FF7F00"))))                          ; cssのタグ
-)
+ )
+
+;;terminalでも自動でタグを閉じる
+(setq web-mode-auto-close-style 1)
+(setq web-mode-enable-auto-closing t)
+(setq web-mode-tag-auto-close-style t)
+
+;;jsx
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))

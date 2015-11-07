@@ -84,6 +84,11 @@
       (setq edit-server-new-frame nil)
       (edit-server-start)))
 
+(require 'server)
+(if (eq window-system 'nil)
+    (unless (server-running-p)
+        (server-start)))
+
 ;; ;; ace-jump
 ;; (require 'ace-jump-mode)
 ;; (global-set-key (kbd "M-i") 'ace-jump-mode)

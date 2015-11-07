@@ -117,6 +117,7 @@
                (message "Quit")
                (throw 'end-flag t)))))))
 (global-set-key "\C-c\C-t" 'my-window-resizer)
+(global-set-key "\C-c\C-l" 'my-window-resizer)
 
 ;; yank and indent
 (defun yank-and-indent ()
