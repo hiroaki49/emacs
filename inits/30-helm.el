@@ -10,6 +10,7 @@
 (require 'helm-mode)
 
 (require 'helm-descbinds)
+(require 'helm-multi-match)
 
 ;;; キー設定i
 ;;; (global-set-key (kbd "C-;") 'helm-mini)
