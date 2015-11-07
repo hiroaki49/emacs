@@ -6,6 +6,16 @@
                                         ;(load-theme 'solarized-dark t)
 (require 'color-theme)
 
+;; (if (eq window-system 'nil)
+;;     (eval-after-load "color-theme"
+;;       '(progn
+;;          (color-theme-initialize)
+;;          (color-theme-molokai))))
+
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/")
+;; (setq molokai-theme-kit t)
+;; (load-theme 'molokai t)
+
 (if (eq window-system 'nil)
     (eval-after-load "color-theme"
       ;; '(progn
@@ -35,7 +45,6 @@
 (global-hl-line-mode)
 ;; カーソル点滅
 (blink-cursor-mode 1)
-
 
 ;; スクリーンの最大化
 (if (eq window-system 'ns)

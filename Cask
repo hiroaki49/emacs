@@ -11,6 +11,7 @@
 (depends-on "anzu")
 (depends-on "auto-complete")
 (depends-on "auto-dictionary")
+(depends-on "avy-migemo")
 (depends-on "caml")
 (depends-on "cask")
 (depends-on "codic")

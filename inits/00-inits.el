@@ -132,7 +132,7 @@
 ;; ロックファイルを消す
 (setq create-lockfiles nil)
 
-;; tmuxでもクリップボードを使えるように
+;; tmux clipboard
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
 

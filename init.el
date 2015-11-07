@@ -76,7 +76,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- 
+
 ;; '(ansi-color-faces-vector
  ;;   [default bold shadow italic underline bold bold-italic bold])
  ;; '(ansi-color-names-vector
@@ -85,7 +85,7 @@
  '(custom-safe-themes
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "4587f73c1f503f01e82ae7da64202834c93e83b10624517145c9e237103ad650" "4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(fci-rule-color "#424242")
+ ;; '(fci-rule-color "#424242")
  ;; '(nrepl-message-colors
  ;;   (quote
  ;;    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")));
@@ -114,7 +114,8 @@
  ;; '(vc-annotate-very-old-color nil)
  ;; '(yas-prompt-functions (quote (my-yas/prompt)))
  ;; '(yas-trigger-key "TAB"))
- )
+)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
