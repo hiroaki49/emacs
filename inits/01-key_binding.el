@@ -117,13 +117,18 @@
                (message "Quit")
                (throw 'end-flag t)))))))
 (global-set-key "\C-c\C-t" 'my-window-resizer)
+(global-set-key "\C-c\ ;" 'my-window-resizer)
 
-;; yank and indent
+;; yank and indent;
 (defun yank-and-indent ()
   "Yank and then indent the newly formed region according to mode."
   (interactive)
   (yank)
   (call-interactively 'indent-region))
 (global-set-key "\C-y" 'yank-and-indent)
+
+(global-set-key "\M-p" 'backward-paragraph)
+(global-set-key "\M-n" 'forward-paragraph)
+
 
 ;;;

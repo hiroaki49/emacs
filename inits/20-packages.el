@@ -78,6 +78,11 @@
       (setq edit-server-new-frame nil)
       (edit-server-start)))
 
+(require 'server)
+(if (eq window-system 'nil)
+    (unless (server-running-p)
+        (server-start)))
+
 ;; ;; ace-jump
 ;; (require 'ace-jump-mode)
 ;; (global-set-key (kbd "M-i") 'ace-jump-mode)
@@ -96,4 +101,12 @@
 ;; shrink-white-space
 (global-set-key (kbd "M-SPC") 'shrink-whitespace)
 
+;; avy
+(global-set-key (kbd "C-o") 'avy-goto-char)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+
+;; avy-migemo
+(require 'avy-migemo)
+(avy-migemo-mode 1)
 ;;;
