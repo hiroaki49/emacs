@@ -19,9 +19,9 @@
 (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
 ;;トリガーキーの設定
-(custom-set-variables '(yas-trigger-key "C-o"))
+;; (custom-set-variables '(yas-trigger-key "C-o"))
 ;;トリガーキーをTABからSPCに変更
-(define-key yas-minor-mode-map (kbd "C-o") 'yas-expand)
+;; (define-key yas-minor-mode-map (kbd "C-o") 'yas-expand)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 
 
